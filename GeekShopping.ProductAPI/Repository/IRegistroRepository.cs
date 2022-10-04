@@ -8,6 +8,7 @@ namespace API_Gasolina.Repository
     {
         Task<IEnumerable<RegistroVO>> FindAll();
         Task<RegistroVO> FindById(int id);
-        Task<RegistroVO> FindPrecoEstadoMunicipioProduto(string estado, string municipio, string produto);        
+        Task<RegistroVO> FindPrecoEstadoMunicipioProduto(string estado, string municipio, string produto);
+        Task<IEnumerable<RegistroVO>> FindPrecosPorEstados(string produto);
     }
 }

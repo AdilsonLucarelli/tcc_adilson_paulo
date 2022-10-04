@@ -3,7 +3,6 @@ using API_Gasolina.GasolinaAPI.Model;
 using API_Gasolina.GasolinaAPI.Model.Context;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Win32;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -40,6 +39,12 @@ namespace API_Gasolina.Repository
                 await _context.Registro.Where(r => r.Estado == estado && r.Municipio == municipio && r.Produto == produto)
                 .FirstOrDefaultAsync();
             return _mapper.Map<RegistroVO>(registro);
-        }       
+        }
+
+        public async Task<IEnumerable<RegistroVO>> FindPrecosPorEstados(string produto)
+        {
+            List<Registro_cotacao> registro = await _context.Registro.Where(r => r.Produto == produto).ToListAsync();
+            return _mapper.Map<List<RegistroVO>>(registro);
+        }
     }
 }
