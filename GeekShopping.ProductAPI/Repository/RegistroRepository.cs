@@ -32,7 +32,7 @@ namespace API_Gasolina.Repository
                 await _context.Registro.Where(r => r.Id == id)
                 .FirstOrDefaultAsync();
             return _mapper.Map<RegistroVO>(registro);
-        }
+        }      
 
         public async Task<RegistroVO> FindPrecoEstadoMunicipioProduto(string estado, string municipio, string produto)
         {
@@ -40,6 +40,6 @@ namespace API_Gasolina.Repository
                 await _context.Registro.Where(r => r.Estado == estado && r.Municipio == municipio && r.Produto == produto)
                 .FirstOrDefaultAsync();
             return _mapper.Map<RegistroVO>(registro);
-        }
+        }       
     }
 }

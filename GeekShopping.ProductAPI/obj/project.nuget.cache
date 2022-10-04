@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7slb8xchFuWFNMnExJfFRmtFHb7kzjxM2ptRadcaoOaUE4uOocASbx0jvwxabE/QVuw84HMuZyI4iM+3TUMMiQ==",
+  "dgSpecHash": "3F6qLGRp70dKdHCfyKvbMf9sHgjl8DN2X2NaMCAZ+mUgWX8jj2J+VBTy/qBKDJEuK3WNVrYQ+NVGphlUBlvryg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\paulo\\Desktop\\Paulo\\TCC\\API_ConsultaGasolina\\API_Gasolina\\API_Gasolina\\GeekShopping.ProductAPI\\API_Gasolina.csproj",
+  "projectFilePath": "C:\\Users\\paulo\\Documents\\GitHub\\API_Gasolina\\GeekShopping.ProductAPI\\API_Gasolina.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\paulo\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\paulo\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",

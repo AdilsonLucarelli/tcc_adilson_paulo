@@ -1601,11 +1601,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\paulo\\Desktop\\Paulo\\TCC\\API_ConsultaGasolina\\API_Gasolina\\API_Gasolina\\GeekShopping.ProductAPI\\API_Gasolina.csproj",
+      "projectUniqueName": "C:\\Users\\paulo\\Documents\\GitHub\\API_Gasolina\\GeekShopping.ProductAPI\\API_Gasolina.csproj",
       "projectName": "API_Gasolina",
-      "projectPath": "C:\\Users\\paulo\\Desktop\\Paulo\\TCC\\API_ConsultaGasolina\\API_Gasolina\\API_Gasolina\\GeekShopping.ProductAPI\\API_Gasolina.csproj",
+      "projectPath": "C:\\Users\\paulo\\Documents\\GitHub\\API_Gasolina\\GeekShopping.ProductAPI\\API_Gasolina.csproj",
       "packagesPath": "C:\\Users\\paulo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\paulo\\Desktop\\Paulo\\TCC\\API_ConsultaGasolina\\API_Gasolina\\API_Gasolina\\GeekShopping.ProductAPI\\obj\\",
+      "outputPath": "C:\\Users\\paulo\\Documents\\GitHub\\API_Gasolina\\GeekShopping.ProductAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
