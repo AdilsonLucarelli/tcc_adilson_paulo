@@ -23,7 +23,7 @@ namespace API_Gasolina.Repository
         {
             List<Registro_cotacao> registro = await _context.Registro.ToListAsync();
             return _mapper.Map<List<RegistroVO>>(registro);
-        }
+        }        
 
         public async Task<RegistroVO> FindById(int id)
         {
@@ -44,6 +44,12 @@ namespace API_Gasolina.Repository
         public async Task<IEnumerable<RegistroVO>> FindPrecosPorEstados(string produto)
         {
             List<Registro_cotacao> registro = await _context.Registro.Where(r => r.Produto == produto).ToListAsync();
+            return _mapper.Map<List<RegistroVO>>(registro);
+        }
+
+        public async Task<IEnumerable<RegistroVO>> FindAllPrecosPorEstado(string estado)
+        {
+            List<Registro_cotacao> registro = await _context.Registro.Where(r => r.Estado == estado).ToListAsync();
             return _mapper.Map<List<RegistroVO>>(registro);
         }
     }

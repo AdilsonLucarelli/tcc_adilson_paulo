@@ -72,5 +72,12 @@ namespace API_Gasolina.Controllers
             var registro = await _registroRepository.FindPrecosPorEstados(produto);            
             return Ok(registro);
         }
+
+        [HttpGet("RetornarTodosPrecosPorEstado/{estado}")]
+        public async Task<ActionResult<RegistroVO>> FindAllPrecosPorEstado(string estado)
+        {
+            var registro = await _registroRepository.FindAllPrecosPorEstado(estado);
+            return Ok(registro);
+        }
     }
 }
