@@ -62,14 +62,14 @@ namespace API_Gasolina.Controllers
         public async Task<ActionResult<RegistroVO>> FindMunicipios()
         {
             var registro = await _registroRepository.FindAll();
-            var municipios = registro.Select(r => r.Municipio).Distinct();
+            var municipios = registro.Select(r => r.Municipio).Distinct(); //Select(r => new { r.Municipio, r.Data })
             return Ok(municipios);
         }
 
         [HttpGet("RetornarPrecosPorEstados/{produto}")]
         public async Task<ActionResult<RegistroVO>> FindPrecosPorEstados(string produto)
         {
-            var registro = await _registroRepository.FindPrecosPorEstados(produto);            
+            var registro = await _registroRepository.FindPrecosPorEstados(produto);
             return Ok(registro);
         }
 

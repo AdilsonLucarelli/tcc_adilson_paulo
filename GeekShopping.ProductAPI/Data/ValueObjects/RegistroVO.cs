@@ -17,6 +17,6 @@
 
         public double Preco_minimo_revenda { get; set; }
 
-        public double Preco_maximo_revenda { get; set; } //flowers
+        public double Preco_maximo_revenda { get; set; }
     }
 }
