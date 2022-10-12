@@ -52,6 +52,18 @@ namespace API_Gasolina.Repository
         {
             List<Registro_cotacao> registro = await _context.Registro.Where(r => r.Estado == estado).ToListAsync();
             return _mapper.Map<List<RegistroVO>>(registro);
-        }        
+        }
+
+        public async Task<IEnumerable<RegistroVO>> FindAllPrecosPorMunicipio(string municipio)
+        {
+            List<Registro_cotacao> registro = await _context.Registro.Where(r => r.Municipio == municipio).ToListAsync();
+            return _mapper.Map<List<RegistroVO>>(registro);
+        }
+
+        public async Task<IEnumerable<RegistroVO>> FindAllPrecosPorProduto(string produto)
+        {
+            List<Registro_cotacao> registro = await _context.Registro.Where(r => r.Produto == produto).ToListAsync();
+            return _mapper.Map<List<RegistroVO>>(registro);
+        }
     }
 }
