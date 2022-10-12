@@ -11,6 +11,9 @@ namespace API_Gasolina.Config
             var mappingConfig = new MapperConfiguration(config => {
                 config.CreateMap<RegistroVO, Registro_cotacao>();
                 config.CreateMap<Registro_cotacao, RegistroVO>();
+
+                config.CreateMap<AvaliacaoVO, Avaliacao>();
+                config.CreateMap<Avaliacao, AvaliacaoVO>();
             });
             return mappingConfig;
         }

@@ -2,7 +2,7 @@
 {
     public class RegistroVO
     {
-        public long Id { get; set; }        
+        public long Id { get; set; }
         public string Data { get; set; }
 
         public string Estado { get; set; }

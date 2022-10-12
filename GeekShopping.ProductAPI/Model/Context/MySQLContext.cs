@@ -8,5 +8,6 @@ namespace API_Gasolina.GasolinaAPI.Model.Context
         public MySQLContext(DbContextOptions<MySQLContext> options) : base(options) {}
 
         public DbSet<Registro_cotacao> Registro { get; set; }
+        public DbSet<Avaliacao> Avaliacao { get; set; }
     }
 }

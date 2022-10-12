@@ -37,6 +37,7 @@ namespace API_Gasolina.GasolinaAPI
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             services.AddScoped<IRegistroRepository, RegistroRepository>();
+            services.AddScoped<IAvaliacaoRepository, AvaliacaoRepository>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
