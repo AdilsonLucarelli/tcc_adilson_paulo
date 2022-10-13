@@ -1,5 +1,6 @@
 ﻿using API_Gasolina.Data.ValueObjects;
 using API_Gasolina.GasolinaAPI.Model;
+using API_Gasolina.Model;
 using AutoMapper;
 using System.Net.NetworkInformation;
 
@@ -14,6 +15,9 @@ namespace API_Gasolina.Config
 
                 config.CreateMap<AvaliacaoVO, Avaliacao>();
                 config.CreateMap<Avaliacao, AvaliacaoVO>();
+
+                config.CreateMap<CotacaoPostoVO, Registro_cotacao_posto>();
+                config.CreateMap<Registro_cotacao_posto, CotacaoPostoVO>();
             });
             return mappingConfig;
         }

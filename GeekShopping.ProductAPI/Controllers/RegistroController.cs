@@ -63,7 +63,7 @@ namespace API_Gasolina.Controllers
         public async Task<ActionResult<RegistroVO>> FindMunicipios()
         {
             var registro = await _registroRepository.FindAll();
-            var municipios = registro.Select(r => r.Municipio).Distinct(); //Select(r => new { r.Municipio, r.Data })
+            var municipios = registro.Select(r => r.Municipio).Distinct();
             return Ok(new { status = StatusCodes.Status200OK, data = municipios, date = DateTime.Now });
         }
 

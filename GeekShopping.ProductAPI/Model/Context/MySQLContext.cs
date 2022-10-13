@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using API_Gasolina.Model;
+using Microsoft.EntityFrameworkCore;
 
 namespace API_Gasolina.GasolinaAPI.Model.Context
 {
@@ -9,5 +10,6 @@ namespace API_Gasolina.GasolinaAPI.Model.Context
 
         public DbSet<Registro_cotacao> Registro { get; set; }
         public DbSet<Avaliacao> Avaliacao { get; set; }
+        public DbSet<Registro_cotacao_posto> CotacaoPosto { get; set; }
     }
 }

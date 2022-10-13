@@ -14,7 +14,6 @@ namespace API_Gasolina.Repository
     {
         private readonly MySQLContext _context;
         private IMapper _mapper;
-
         public RegistroRepository(MySQLContext context, IMapper mapper)
         {
             _context = context;

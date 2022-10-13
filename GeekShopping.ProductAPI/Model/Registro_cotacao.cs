@@ -28,6 +28,6 @@ namespace API_Gasolina.GasolinaAPI.Model
         public double Preco_minimo_revenda { get; set; }
 
         [Column("preco_maximo_revenda")]
-        public double Preco_maximo_revenda { get; set; }
+        public double Preco_maximo_revenda { get; set; }        
     }
 }

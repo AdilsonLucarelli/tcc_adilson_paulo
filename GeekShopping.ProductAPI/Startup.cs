@@ -38,6 +38,7 @@ namespace API_Gasolina.GasolinaAPI
 
             services.AddScoped<IRegistroRepository, RegistroRepository>();
             services.AddScoped<IAvaliacaoRepository, AvaliacaoRepository>();
+            services.AddScoped<ICotacaoPostoRepository, CotacaoPostoRepository>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
