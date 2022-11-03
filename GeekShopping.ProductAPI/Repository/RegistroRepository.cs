@@ -43,21 +43,21 @@ namespace API_Gasolina.Repository
 
         public async Task<IEnumerable<RegistroVO>> FindPrecosPorEstados(string produto)
         {
-            List<Registro_cotacao> registro = await _context.Registro.Where(r => r.Produto == produto).ToListAsync();
+            List<Registro_cotacao> registro = await _context.Registro.Where(r => r.Produto == produto && r.Data == "2022-10-22").ToListAsync();
             if (registro.Count == 0) return null;
             return _mapper.Map<List<RegistroVO>>(registro);
         }
 
-        public async Task<IEnumerable<RegistroVO>> FindAllPrecosPorEstado(string estado)
+        public async Task<IEnumerable<RegistroVO>> FindAllPrecosPorEstado(string estado, string produto)
         {
-            List<Registro_cotacao> registro = await _context.Registro.Where(r => r.Estado == estado).ToListAsync();
+            List<Registro_cotacao> registro = await _context.Registro.Where(r => r.Estado == estado && r.Produto == produto && r.Data == "2022-10-22").ToListAsync();
             if (registro.Count == 0) return null;
             return _mapper.Map<List<RegistroVO>>(registro);
         }
 
-        public async Task<IEnumerable<RegistroVO>> FindAllPrecosPorMunicipio(string municipio)
+        public async Task<IEnumerable<RegistroVO>> FindAllPrecosPorMunicipio(string municipio, string produto)
         {
-            List<Registro_cotacao> registro = await _context.Registro.Where(r => r.Municipio == municipio).ToListAsync();
+            List<Registro_cotacao> registro = await _context.Registro.Where(r => r.Municipio == municipio && r.Produto == produto && r.Data == "2022-10-22").ToListAsync();
             if (registro.Count == 0) return null;
             return _mapper.Map<List<RegistroVO>>(registro);
         }
@@ -68,5 +68,19 @@ namespace API_Gasolina.Repository
             if (registro.Count == 0) return null;
             return _mapper.Map<List<RegistroVO>>(registro);
         }
+
+        public async Task<IEnumerable<RegistroVO>> PrecoMediaASCPorProduto(string produto)
+        {
+            List<Registro_cotacao> registro = await _context.Registro.Where(r => r.Produto == produto && r.Data == "2022-10-22").OrderBy(r => r.Preco_medio_revenda).Take(3).ToListAsync();
+            if (registro.Count == 0) return null;
+            return _mapper.Map<List<RegistroVO>>(registro);
+        }
+
+        public async Task<IEnumerable<RegistroVO>> PrecoMediaASCPorMunicipio(string municipio)
+        {
+            List<Registro_cotacao> registro = await _context.Registro.Where(r => r.Municipio == municipio && r.Data == "2022-10-22").OrderBy(r => r.Preco_medio_revenda).Take(3).ToListAsync();
+            if (registro.Count == 0) return null;
+            return _mapper.Map<List<RegistroVO>>(registro);
+        }               
     }
 }

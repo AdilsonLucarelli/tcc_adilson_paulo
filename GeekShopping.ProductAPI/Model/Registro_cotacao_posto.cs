@@ -34,10 +34,7 @@ namespace API_Gasolina.Model
         public string Municipio_endereco { get; set; }
 
         [Column("estado_endereco")]
-        public string Estado_endereco { get; set; }
-
-        [Column("telefone_posto")]
-        public string Telefone_posto { get; set; }
+        public string Estado_endereco { get; set; }        
 
         [Column("bandeira_posto")]
         public string Bandeira_posto { get; set; }
@@ -46,9 +43,6 @@ namespace API_Gasolina.Model
         public string Nome_produto { get; set; }
 
         [Column("cotacao_produto_posto")]
-        public double Cotacao_produto_posto { get; set; }
-
-        [Column("data_coleta_cotacao")]
-        public string Data_coleta_cotacao { get; set; } //date
+        public double Cotacao_produto_posto { get; set; }        
     }
 }

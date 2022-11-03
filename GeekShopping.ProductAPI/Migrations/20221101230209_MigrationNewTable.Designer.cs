@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API_Gasolina.Migrations
 {
     [DbContext(typeof(MySQLContext))]
-    [Migration("20221013123007_AdicaoAvaliacao")]
-    partial class AdicaoAvaliacao
+    [Migration("20221101230209_MigrationNewTable")]
+    partial class MigrationNewTable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -90,6 +90,70 @@ namespace API_Gasolina.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("registro_cotacao");
+                });
+
+            modelBuilder.Entity("API_Gasolina.Model.Registro_cotacao_posto", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasColumnName("id");
+
+                    b.Property<string>("Bairro_endereco")
+                        .HasColumnType("longtext")
+                        .HasColumnName("bairro_endereco");
+
+                    b.Property<string>("Bandeira_posto")
+                        .HasColumnType("longtext")
+                        .HasColumnName("bandeira_posto");
+
+                    b.Property<int>("Cep_endereco")
+                        .HasColumnType("int")
+                        .HasColumnName("cep_endereco");
+
+                    b.Property<string>("Cnpj")
+                        .HasColumnType("longtext")
+                        .HasColumnName("cnpj");
+
+                    b.Property<string>("Complemento_endereco")
+                        .HasColumnType("longtext")
+                        .HasColumnName("complemento_endereco");
+
+                    b.Property<double>("Cotacao_produto_posto")
+                        .HasColumnType("double")
+                        .HasColumnName("cotacao_produto_posto");
+
+                    b.Property<string>("Data_cotacao")
+                        .HasColumnType("longtext")
+                        .HasColumnName("data_cotacao");
+
+                    b.Property<string>("Estado_endereco")
+                        .HasColumnType("longtext")
+                        .HasColumnName("estado_endereco");
+
+                    b.Property<string>("Municipio_endereco")
+                        .HasColumnType("longtext")
+                        .HasColumnName("municipio_endereco");
+
+                    b.Property<string>("Nome_fantasia")
+                        .HasColumnType("longtext")
+                        .HasColumnName("nome_fantasia");
+
+                    b.Property<string>("Nome_produto")
+                        .HasColumnType("longtext")
+                        .HasColumnName("nome_produto");
+
+                    b.Property<string>("Nome_rua")
+                        .HasColumnType("longtext")
+                        .HasColumnName("nome_rua");
+
+                    b.Property<string>("Numero_rua")
+                        .HasColumnType("longtext")
+                        .HasColumnName("numero_rua");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("registro_cotacao_posto");
                 });
 #pragma warning restore 612, 618
         }

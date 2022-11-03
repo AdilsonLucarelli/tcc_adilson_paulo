@@ -121,10 +121,6 @@ namespace API_Gasolina.Migrations
                         .HasColumnType("double")
                         .HasColumnName("cotacao_produto_posto");
 
-                    b.Property<string>("Data_coleta_cotacao")
-                        .HasColumnType("longtext")
-                        .HasColumnName("data_coleta_cotacao");
-
                     b.Property<string>("Data_cotacao")
                         .HasColumnType("longtext")
                         .HasColumnName("data_cotacao");
@@ -152,10 +148,6 @@ namespace API_Gasolina.Migrations
                     b.Property<string>("Numero_rua")
                         .HasColumnType("longtext")
                         .HasColumnName("numero_rua");
-
-                    b.Property<string>("Telefone_posto")
-                        .HasColumnType("longtext")
-                        .HasColumnName("telefone_posto");
 
                     b.HasKey("Id");
 

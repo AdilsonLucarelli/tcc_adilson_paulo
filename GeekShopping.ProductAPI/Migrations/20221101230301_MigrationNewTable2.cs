@@ -4,7 +4,7 @@
 
 namespace API_Gasolina.Migrations
 {
-    public partial class AdicaoAvaliacao : Migration
+    public partial class MigrationNewTable2 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

@@ -1,4 +1,5 @@
 ﻿using API_Gasolina.Data.ValueObjects;
+using API_Gasolina.GasolinaAPI.Model;
 using API_Gasolina.GasolinaAPI.Model.Context;
 using API_Gasolina.Model;
 using AutoMapper;
@@ -30,6 +31,13 @@ namespace API_Gasolina.Repository
                 await _context.CotacaoPosto.Where(r => r.Id == id)
                 .FirstOrDefaultAsync();
             return _mapper.Map<CotacaoPostoVO>(registro);
+        }
+
+        public async Task<IEnumerable<CotacaoPostoVO>> PostosMaisBaratosPorMunicipio(string produto, string municipio)
+        {
+            List<Registro_cotacao_posto> registro = await _context.CotacaoPosto.Where(r => r.Municipio_endereco == municipio && r.Nome_produto == produto).OrderBy(r => r.Cotacao_produto_posto).Take(3).ToListAsync();
+            if (registro.Count == 0) return null;
+            return _mapper.Map<List<CotacaoPostoVO>>(registro);
         }
     }
 }

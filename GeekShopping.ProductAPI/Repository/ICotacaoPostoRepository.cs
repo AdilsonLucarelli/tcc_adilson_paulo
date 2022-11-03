@@ -8,5 +8,6 @@ namespace API_Gasolina.Repository
     {
         Task<IEnumerable<CotacaoPostoVO>> FindAll();
         Task<CotacaoPostoVO> FindById(int id);
+        Task<IEnumerable<CotacaoPostoVO>> PostosMaisBaratosPorMunicipio(string produto, string municipio);
     }
 }

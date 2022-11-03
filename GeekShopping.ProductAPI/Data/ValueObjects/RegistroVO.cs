@@ -11,6 +11,8 @@
 
         public string Produto { get; set; }
 
+        public double Average { get; set; }
+
         public int Numero_de_postos_pesquisados { get; set; }
 
         public double Preco_medio_revenda { get; set; }

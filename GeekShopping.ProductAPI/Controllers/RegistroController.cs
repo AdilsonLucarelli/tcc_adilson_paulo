@@ -75,26 +75,44 @@ namespace API_Gasolina.Controllers
             return Ok(new { status = StatusCodes.Status200OK, data = registro, date = DateTime.Now });
         }
 
-        [HttpGet("RetornarTodosPrecosPorEstado/{estado}")]
-        public async Task<ActionResult<RegistroVO>> FindAllPrecosPorEstado(string estado)
+        [HttpGet("RetornarTodosPrecosPorEstado/{estado}/{produto}")]
+        public async Task<ActionResult<RegistroVO>> FindAllPrecosPorEstado(string estado, string produto)
         {
-            var registro = await _registroRepository.FindAllPrecosPorEstado(estado);
+            var registro = await _registroRepository.FindAllPrecosPorEstado(estado, produto);
+            var registroAverage = registro.GroupBy(i => i.Produto).Select(r => new {dados = r.ToList(), average = r.Average(i => i.Preco_medio_revenda) });
             if (registro == null) return NotFound();
-            return Ok(new { status = StatusCodes.Status200OK, data = registro, date = DateTime.Now });
+            return Ok(new { status = StatusCodes.Status200OK, data = registroAverage, date = DateTime.Now });
         }
 
-        [HttpGet("RetornarTodosPrecosPorMunicipio/{municipio}")]
-        public async Task<ActionResult<RegistroVO>> FindAllPrecosPorMunicipio(string municipio)
+        [HttpGet("RetornarTodosPrecosPorMunicipio/{municipio}/{produto}")]
+        public async Task<ActionResult<RegistroVO>> FindAllPrecosPorMunicipio(string municipio, string produto)
         {
-            var registro = await _registroRepository.FindAllPrecosPorMunicipio(municipio);
+            var registro = await _registroRepository.FindAllPrecosPorMunicipio(municipio, produto);
+            var registroAverage = registro.GroupBy(i => i.Produto).Select(r => new { dados = r.ToList(), average = r.Average(i => i.Preco_medio_revenda) });
             if (registro == null) return NotFound();
-            return Ok(new { status = StatusCodes.Status200OK, data = registro, date = DateTime.Now });
+            return Ok(new { status = StatusCodes.Status200OK, data = registroAverage, date = DateTime.Now });
         }
 
         [HttpGet("RetornarTodosPrecosPorCombustivel/{produto}")]
         public async Task<ActionResult<RegistroVO>> FindAllPrecosPorProduto(string produto)
         {
             var registro = await _registroRepository.FindAllPrecosPorProduto(produto);
+            if (registro == null) return NotFound();
+            return Ok(new { status = StatusCodes.Status200OK, data = registro, date = DateTime.Now });
+        }
+
+        [HttpGet("PrecoMediaASCPorProduto/{produto}")]
+        public async Task<ActionResult<RegistroVO>> PrecoMediaASCPorProduto(string produto)
+        {
+            var registro = await _registroRepository.PrecoMediaASCPorProduto(produto);
+            if (registro == null) return NotFound();
+            return Ok(new { status = StatusCodes.Status200OK, data = registro, date = DateTime.Now });
+        }
+
+        [HttpGet("PrecoMediaASCPorMunicipio/{municipio}")]
+        public async Task<ActionResult<RegistroVO>> PrecoMediaASCPorMunicipio(string municipio)
+        {
+            var registro = await _registroRepository.PrecoMediaASCPorMunicipio(municipio);
             if (registro == null) return NotFound();
             return Ok(new { status = StatusCodes.Status200OK, data = registro, date = DateTime.Now });
         }

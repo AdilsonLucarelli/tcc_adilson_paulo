@@ -25,14 +25,10 @@ namespace API_Gasolina.Data.ValueObjects
         
         public string Estado_endereco { get; set; }
         
-        public string Telefone_posto { get; set; }
-        
         public string Bandeira_posto { get; set; }
         
         public string Nome_produto { get; set; }
 
         public double Cotacao_produto_posto { get; set; }
-
-        public string Data_coleta_cotacao { get; set; } //date
     }
 }

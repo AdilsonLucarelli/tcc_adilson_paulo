@@ -1594,23 +1594,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\paulo.ribeiro\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\paulo\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\paulo.ribeiro\\Downloads\\API_Gasolina-main\\API_Gasolina-main\\GeekShopping.ProductAPI\\API_Gasolina.csproj",
+      "projectUniqueName": "C:\\Users\\paulo\\Documents\\GitHub\\API_Gasolina\\GeekShopping.ProductAPI\\API_Gasolina.csproj",
       "projectName": "API_Gasolina",
-      "projectPath": "C:\\Users\\paulo.ribeiro\\Downloads\\API_Gasolina-main\\API_Gasolina-main\\GeekShopping.ProductAPI\\API_Gasolina.csproj",
-      "packagesPath": "C:\\Users\\paulo.ribeiro\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\paulo.ribeiro\\Downloads\\API_Gasolina-main\\API_Gasolina-main\\GeekShopping.ProductAPI\\obj\\",
+      "projectPath": "C:\\Users\\paulo\\Documents\\GitHub\\API_Gasolina\\GeekShopping.ProductAPI\\API_Gasolina.csproj",
+      "packagesPath": "C:\\Users\\paulo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\paulo\\Documents\\GitHub\\API_Gasolina\\GeekShopping.ProductAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\paulo.ribeiro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\paulo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
