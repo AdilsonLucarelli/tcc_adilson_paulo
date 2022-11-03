@@ -47,7 +47,7 @@ namespace API_Gasolina.Controllers
         [HttpGet("RetornarProdutos")]
         public async Task<ActionResult<CotacaoPostoVO>> FindProdutos()
         {
-            var registro = await _cotacaoPostoRepository.FindAll();
+            var registro = await _cotacaoPostoRepository.FindAllOrderByProduto();
             var produtos = registro.Select(r => r.Nome_produto).Distinct();
             return Ok(new { status = StatusCodes.Status200OK, data = produtos, date = DateTime.Now });
         }
@@ -55,7 +55,7 @@ namespace API_Gasolina.Controllers
         [HttpGet("RetornarMunicipios")]
         public async Task<ActionResult<CotacaoPostoVO>> FindMunicipios()
         {
-            var registro = await _cotacaoPostoRepository.FindAll();
+            var registro = await _cotacaoPostoRepository.FindAllOrderByMunicipio();
             var municipios = registro.Select(r => r.Municipio_endereco).Distinct();
             return Ok(new { status = StatusCodes.Status200OK, data = municipios, date = DateTime.Now });
         }

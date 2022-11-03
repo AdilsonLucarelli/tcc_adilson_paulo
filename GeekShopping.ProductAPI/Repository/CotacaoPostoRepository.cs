@@ -25,6 +25,18 @@ namespace API_Gasolina.Repository
             return _mapper.Map<List<CotacaoPostoVO>>(registro);
         }
 
+        public async Task<IEnumerable<CotacaoPostoVO>> FindAllOrderByMunicipio()
+        {
+            List<Registro_cotacao_posto> registro = await _context.CotacaoPosto.OrderBy(r => r.Municipio_endereco).ToListAsync();
+            return _mapper.Map<List<CotacaoPostoVO>>(registro);
+        }
+
+        public async Task<IEnumerable<CotacaoPostoVO>> FindAllOrderByProduto()
+        {
+            List<Registro_cotacao_posto> registro = await _context.CotacaoPosto.OrderBy(r => r.Nome_produto).ToListAsync();
+            return _mapper.Map<List<CotacaoPostoVO>>(registro);
+        }
+
         public async Task<CotacaoPostoVO> FindById(int id)
         {
             Registro_cotacao_posto registro =
