@@ -46,7 +46,7 @@ namespace API_Gasolina.Controllers
         [HttpGet("RetornarProdutos")]
         public async Task<ActionResult<RegistroVO>> FindProdutos()
         {
-            var registro = await _registroRepository.FindAll();
+            var registro = await _registroRepository.FindAllOrderByProduto();
             var produtos = registro.Select(r => r.Produto).Distinct();
             return Ok(new { status = StatusCodes.Status200OK, data = produtos, date = DateTime.Now });
         }
@@ -54,15 +54,15 @@ namespace API_Gasolina.Controllers
         [HttpGet("RetornarEstados")]
         public async Task<ActionResult<RegistroVO>> FindEstados()
         {
-            var registro = await _registroRepository.FindAll();
-            var estados = registro.Select(r => r.Estado).Distinct();
+            var registro = await _registroRepository.FindAllOrderByEstado();
+            var estados = registro.Select(r => r.Estado).Distinct();            
             return Ok(new { status = StatusCodes.Status200OK, data = estados, date = DateTime.Now });
         }
 
         [HttpGet("RetornarMunicipios")]
         public async Task<ActionResult<RegistroVO>> FindMunicipios()
         {
-            var registro = await _registroRepository.FindAll();
+            var registro = await _registroRepository.FindAllOrderByMunicipio();
             var municipios = registro.Select(r => r.Municipio).Distinct();
             return Ok(new { status = StatusCodes.Status200OK, data = municipios, date = DateTime.Now });
         }
@@ -79,8 +79,8 @@ namespace API_Gasolina.Controllers
         public async Task<ActionResult<RegistroVO>> FindAllPrecosPorEstado(string estado, string produto)
         {
             var registro = await _registroRepository.FindAllPrecosPorEstado(estado, produto);
-            var registroAverage = registro.GroupBy(i => i.Produto).Select(r => new {dados = r.ToList(), average = r.Average(i => i.Preco_medio_revenda) });
             if (registro == null) return NotFound();
+            var registroAverage = registro.GroupBy(i => i.Produto).Select(r => new {dados = r.ToList(), average = r.Average(i => i.Preco_medio_revenda) });            
             return Ok(new { status = StatusCodes.Status200OK, data = registroAverage, date = DateTime.Now });
         }
 
@@ -88,8 +88,8 @@ namespace API_Gasolina.Controllers
         public async Task<ActionResult<RegistroVO>> FindAllPrecosPorMunicipio(string municipio, string produto)
         {
             var registro = await _registroRepository.FindAllPrecosPorMunicipio(municipio, produto);
-            var registroAverage = registro.GroupBy(i => i.Produto).Select(r => new { dados = r.ToList(), average = r.Average(i => i.Preco_medio_revenda) });
             if (registro == null) return NotFound();
+            var registroAverage = registro.GroupBy(i => i.Produto).Select(r => new { dados = r.ToList(), average = r.Average(i => i.Preco_medio_revenda) });            
             return Ok(new { status = StatusCodes.Status200OK, data = registroAverage, date = DateTime.Now });
         }
 

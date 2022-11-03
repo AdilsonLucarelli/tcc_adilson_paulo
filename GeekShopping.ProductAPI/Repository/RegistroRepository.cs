@@ -23,7 +23,25 @@ namespace API_Gasolina.Repository
         {
             List<Registro_cotacao> registro = await _context.Registro.ToListAsync();
             return _mapper.Map<List<RegistroVO>>(registro);
-        }        
+        }
+
+        public async Task<IEnumerable<RegistroVO>> FindAllOrderByEstado()
+        {
+            List<Registro_cotacao> registro = await _context.Registro.OrderBy(r => r.Estado).ToListAsync();
+            return _mapper.Map<List<RegistroVO>>(registro);
+        }
+
+        public async Task<IEnumerable<RegistroVO>> FindAllOrderByProduto()
+        {
+            List<Registro_cotacao> registro = await _context.Registro.OrderBy(r => r.Produto).ToListAsync();
+            return _mapper.Map<List<RegistroVO>>(registro);
+        }
+
+        public async Task<IEnumerable<RegistroVO>> FindAllOrderByMunicipio()
+        {
+            List<Registro_cotacao> registro = await _context.Registro.OrderBy(r => r.Municipio).ToListAsync();
+            return _mapper.Map<List<RegistroVO>>(registro);
+        }
 
         public async Task<RegistroVO> FindById(int id)
         {
@@ -81,6 +99,6 @@ namespace API_Gasolina.Repository
             List<Registro_cotacao> registro = await _context.Registro.Where(r => r.Municipio == municipio && r.Data == "2022-10-22").OrderBy(r => r.Preco_medio_revenda).Take(3).ToListAsync();
             if (registro.Count == 0) return null;
             return _mapper.Map<List<RegistroVO>>(registro);
-        }               
+        }        
     }
 }
