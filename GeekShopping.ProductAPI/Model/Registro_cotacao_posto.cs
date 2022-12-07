@@ -7,7 +7,7 @@ namespace API_Gasolina.Model
     public class Registro_cotacao_posto : BaseEntity
     {
         [Column("data_cotacao")]
-        public string Data_cotacao { get; set; } //date
+        public string Data_cotacao { get; set; }
 
         [Column("cnpj")]
         public string Cnpj { get; set; }

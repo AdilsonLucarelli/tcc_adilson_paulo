@@ -5,7 +5,7 @@ namespace API_Gasolina.Data.ValueObjects
     public class CotacaoPostoVO
     {
         public long Id { get; set; }
-        public string Data_cotacao { get; set; } //date
+        public string Data_cotacao { get; set; }
         
         public string Cnpj { get; set; }
         
