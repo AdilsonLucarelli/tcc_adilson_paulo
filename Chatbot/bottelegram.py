@@ -6,8 +6,6 @@ from telegram.ext import *
 import requests
 from datetime import date
 
-DATA_ATUAL = date.today().strftime("%d/%m/%Y")
-
 updater = Updater(token="TOKEN_DO_BOT_AQUI")
 dispatcher = updater.dispatcher
 
